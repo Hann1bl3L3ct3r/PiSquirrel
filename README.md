@@ -1,5 +1,6 @@
 # PiSquirrel
-Open source high performance wiretap and dropbox based on the PacketSquirrel by Hak5 built utilizing open source hardware and software packages.
+
+The PiSquirrel was created to fill a similar space to the Hak5 PacketSquirrel. A small, easy to conceal, dropbox that can act as an inline wiretap on servers, workstations, and networking equipment. Using cheap ARM systems and open source tools, the PiSquirrel allows for red teams and offensive security professional to have an easily accessible and low cost option.  
 
 PiSquirrel is based on the FriendlyElec NanoPi R3S. The purchase link directly from FriendlyElec is below: 
 
@@ -16,33 +17,7 @@ Once the system is online, you can SSH into the R3S using username/password pi:p
 The script below updates the system, installs necessary packages, and configures the interfaces to run in bridge.
 Note that eth0 is the WAN and eth1 is the LAN interface on the unit.  
 
-***
-sudo apt -y update 
-sudo apt -y upgrade 
-sudo apt -y install bridge-utils nano  
-sudo hostnamectl set-hostname HPLASERJET
-echo -e "pi\npisquirrel\npisquirrel" | passwd   
-curl -s https://install.zerotier.com | sudo bash
-echo "PATH=$PATH:/home/pi/.local/bin" >> .bashrc
-
-***
-
 Edit the /etc/network/interfaces file and replace its content with the following: 
-
-***
-# The loopback network interface
-auto lo
-iface lo inet loopback
-
-# Set up interfaces manually, avoiding conflicts with, e.g., network manager
-iface eth0 inet manual
-iface eth1 inet manual
-
-# Bridge setup
-auto br0
-iface br0 inet dhcp
-  bridge_ports eth0 eth1
-*** 
 
 Run "ip a" and now log into the R3S on the newly pulled bridge IP. Once in, run "sudo reboot". 
 
@@ -51,21 +26,4 @@ instance.
 
 A list of installs and download for common tools that I use during testing: 
 
-***
-# Make a dedicated Tools directory
-mkdir Tools
-cd Tools
-
-# Install python, ruby, and nmap directly 
-sudo apt install python3-pip nmap ruby python3-dev
-
-# Install impacket framework (this is why we made sure to add bin to path previously) 
-pip3 install impacket 
-
-# Pull down an assortment of tools including Responder, mitm6, ASRepCatcher, and the Bloodhound.py ingester
-git clone https://github.com/lgandx/Responder.git
-git clone https://github.com/dirkjanm/mitm6.git
-git clone https://github.com/Yaxxine7/ASRepCatcher.git
-git clone https://github.com/dirkjanm/BloodHound.py.git
-***
 
