@@ -14,21 +14,33 @@ The current PiSquirrel is based on the OS build: rk3566-sd-debian-bullseye-minim
 
 Once the system is online, you can SSH into the R3S using username/password pi:pi. 
 
-You can pull in the setup script to automatically configure the unit for red team operations. It makes the following changes: 
+You can pull in the setup.sh script to automatically configure the unit for red team operations. It makes the following changes: 
 
  - Updates and upgrades the system
  - Installs bridge-utils to bridge interfaces and nano for easier file editing
  - Modifies the hostname to appear to be a printer to devices on the network
+ - Changes the default password from 'pi' to 'pisquirrel' 
  - Installs ZeroTier for remote access
  - Modifies PATH for future tool installation
  - Modifies the /etc/network/interfaces file to bridge interfaces
  - Restarts networking service
 
-Run "ip a" and now log into the R3S on the newly pulled bridge IP. Once in, run "sudo reboot". 
+`curl -K "https://raw.githubusercontent.com/Hann1bl3L3ct3r/PiSquirrel/refs/heads/main/setup.sh" | sudo bash`
 
-Log back into the R3S. You can now connect to the system with your new PiSquirrel and connect it to your ZeroTier 
-instance. 
+Once the script completes, simply reboot the PiSquirrel and it should be ready for tool installation and ZeroTier network connection. The ZeroTier command is as follows: 
 
-A list of installs and download for common tools that I use during testing: 
+`sudo zerotier-cli join <YOU RNETWORK ID>`
 
+The useful tools script is some standard tools that are useful for network manipulation, password hash gathering, enumeration, AD interaction, etc. I have used most of these in nearly every engagement. 
+
+The usefultools.sh script will do the following: 
+
+ - Makes a dedicated Tools directory
+ - Install python3-pip nmap ruby python3-dev from apt
+ - Installs Impacket from pip
+ - Pulls down Responder, MITM6, ASRepCatcher, and Bloodhound.py from their respective Github repos
+
+Simply run pull and run the script from the home directory: 
+
+`curl https://raw.githubusercontent.com/Hann1bl3L3ct3r/PiSquirrel/refs/heads/main/usefultools.sh | sudo bash `
 
