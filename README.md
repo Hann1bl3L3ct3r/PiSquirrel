@@ -35,7 +35,7 @@ The useful tools script is some standard tools that are useful for network manip
 The usefultools.sh script will do the following: 
 
  - Makes a dedicated Tools directory
- - Install python3-pip nmap python3-dev from apt
+ - Install python3-pip nmap python3-dev tcpdump from apt
  - Installs Impacket from pip
  - Pulls down Responder, MITM6, ASRepCatcher, and Bloodhound.py from their respective Github repos
 
