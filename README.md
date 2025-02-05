@@ -14,10 +14,15 @@ The current PiSquirrel is based on the OS build: rk3566-sd-debian-bullseye-minim
 
 Once the system is online, you can SSH into the R3S using username/password pi:pi. 
 
-The script below updates the system, installs necessary packages, and configures the interfaces to run in bridge.
-Note that eth0 is the WAN and eth1 is the LAN interface on the unit.  
+You can pull in the setup script to automatically configure the unit for red team operations. It makes the following changes: 
 
-Edit the /etc/network/interfaces file and replace its content with the following: 
+ - Updates and upgrades the system
+ - Installs bridge-utils to bridge interfaces and nano for easier file editing
+ - Modifies the hostname to appear to be a printer to devices on the network
+ - Installs ZeroTier for remote access
+ - Modifies PATH for future tool installation
+ - Modifies the /etc/network/interfaces file to bridge interfaces
+ - Restarts networking service
 
 Run "ip a" and now log into the R3S on the newly pulled bridge IP. Once in, run "sudo reboot". 
 
