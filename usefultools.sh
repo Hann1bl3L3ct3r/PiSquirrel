@@ -3,7 +3,7 @@ mkdir Tools
 cd Tools
 
 # Install python, ruby, and nmap directly 
-sudo apt install python3-pip nmap ruby python3-dev
+sudo apt install python3-pip nmap python3-dev
 
 # Install impacket framework (this is why we made sure to add bin to path previously) 
 pip3 install impacket 
