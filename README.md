@@ -24,7 +24,7 @@ You can pull in the setup.sh script to automatically configure the unit for red 
  - Modifies the /etc/network/interfaces file to bridge interfaces
  - Restarts networking service
 
-`curl -K "https://raw.githubusercontent.com/Hann1bl3L3ct3r/PiSquirrel/refs/heads/main/setup.sh" | sudo bash`
+`curl "https://raw.githubusercontent.com/Hann1bl3L3ct3r/PiSquirrel/refs/heads/main/setup.sh" | sudo bash`
 
 Once the script completes, simply reboot the PiSquirrel and it should be ready for tool installation and ZeroTier network connection. The ZeroTier command is as follows: 
 
