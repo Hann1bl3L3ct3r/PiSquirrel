@@ -19,7 +19,6 @@ You can pull in the setup.sh script to automatically configure the unit for red 
  - Updates and upgrades the system
  - Installs bridge-utils to bridge interfaces and nano for easier file editing
  - Modifies the hostname to appear to be a printer to devices on the network
- - Changes the default password from 'pi' to 'pisquirrel' 
  - Installs ZeroTier for remote access
  - Modifies PATH for future tool installation
  - Modifies the /etc/network/interfaces file to bridge interfaces
