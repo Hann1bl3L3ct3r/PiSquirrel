@@ -1,5 +1,7 @@
 # PiSquirrel
 
+![pisquirrel](https://github.com/user-attachments/assets/960baddd-5e1d-4702-a7e6-93b2f2842069)
+
 The PiSquirrel was created to fill a similar space to the Hak5 PacketSquirrel. A small, easy to conceal, dropbox that can act as an inline wiretap on servers, workstations, and networking equipment. Using cheap ARM systems and open source tools, the PiSquirrel allows for red teams and offensive security professional to have an easily accessible and low cost option.  
 
 PiSquirrel is based on the FriendlyElec NanoPi R3S. The purchase link directly from FriendlyElec is below: 
