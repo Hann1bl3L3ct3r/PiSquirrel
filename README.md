@@ -36,7 +36,7 @@ The usefultools.sh script will do the following:
 
  - Makes a dedicated Tools directory
  - Install python3-pip nmap python3-dev tcpdump from apt
- - Installs Impacket from pip
+ - Installs Impacket and Certipy from pip
  - Pulls down Responder, MITM6, ASRepCatcher, and Bloodhound.py from their respective Github repos
 
 Simply run pull and run the script from the home directory: 
