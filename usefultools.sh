@@ -3,7 +3,7 @@ mkdir Tools
 cd Tools
 
 # Install python, nmap, tcpdump, etc from apt  
-sudo apt install -y python3-pip nmap python3-dev tcpdump pipx
+sudo apt install -y python3-pip nmap python3-dev tcpdump pipx bettercap
 
 # Install impacket framework, certipy-ad, etc from apt instead of pip (this is why we made sure to add bin to path previously) 
 sudo apt install -y python3-impacket python3-certipy
