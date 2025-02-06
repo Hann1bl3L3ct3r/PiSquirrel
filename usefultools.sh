@@ -22,3 +22,4 @@ git clone https://github.com/lgandx/Responder.git
 git clone https://github.com/dirkjanm/mitm6.git
 git clone https://github.com/Yaxxine7/ASRepCatcher.git
 git clone https://github.com/dirkjanm/BloodHound.py.git 
+git clone https://github.com/p0dalirius/Coercer.git
