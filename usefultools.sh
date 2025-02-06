@@ -14,5 +14,5 @@ git clone https://github.com/dirkjanm/mitm6.git
 git clone https://github.com/Yaxxine7/ASRepCatcher.git
 git clone https://github.com/dirkjanm/BloodHound.py.git
 
-# Installing netexec package
-pipx install git+https://github.com/Pennyw0rth/NetExec
+# Installing netexec package (Not Working Currently) 
+# pipx install git+https://github.com/Pennyw0rth/NetExec
