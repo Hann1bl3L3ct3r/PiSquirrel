@@ -12,7 +12,4 @@ sudo apt install -y python3-impacket python3-certipy
 git clone https://github.com/lgandx/Responder.git
 git clone https://github.com/dirkjanm/mitm6.git
 git clone https://github.com/Yaxxine7/ASRepCatcher.git
-git clone https://github.com/dirkjanm/BloodHound.py.git
-
-# Installing netexec package (Not Working Currently) 
-# pipx install git+https://github.com/Pennyw0rth/NetExec
+git clone https://github.com/dirkjanm/BloodHound.py.git 
