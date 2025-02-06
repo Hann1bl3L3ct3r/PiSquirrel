@@ -2,12 +2,11 @@
 mkdir Tools
 cd Tools
 
-# Install python, ruby, and nmap directly 
-sudo apt install python3-pip nmap python3-dev tcpdump pipx
+# Install python, nmap, tcpdump, etc from apt  
+sudo apt install -y python3-pip nmap python3-dev tcpdump pipx
 
-# Install impacket framework (this is why we made sure to add bin to path previously) 
-pip3 install impacket 
-pip3 install certipy-ad 
+# Install impacket framework, certipy-ad, etc from apt instead of pip (this is why we made sure to add bin to path previously) 
+sudo apt install -y python3-impacket python3-certipy
 
 # Pull down an assortment of tools including Responder, mitm6, ASRepCatcher, and the Bloodhound.py ingester
 git clone https://github.com/lgandx/Responder.git
