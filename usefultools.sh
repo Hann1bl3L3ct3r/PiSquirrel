@@ -1,5 +1,5 @@
 # Fix Python references through symlink
-sudo ln -s /usr/bin/python3 /usr/bin/python
+ln -s /usr/bin/python3 /usr/bin/python
 
 # Install python, nmap, tcpdump, etc from apt  
 apt install -y python3-pip nmap python3-dev tcpdump pipx bettercap
