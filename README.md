@@ -10,7 +10,7 @@ The documentation necessary to get the OS loaded to the device is below:
 
 https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R3S#Work_with_Debian_Core
 
-The current PiSquirrel is based on the OS build: rk3566-sd-debian-bullseye-minimal-6.1-arm64-20250123.img
+The current PiSquirrel is based on the OS build: rk3566-XYZ-debian-bookworm-core-6.1-arm64-YYYYMMDD.img.gz	
 
 Once the system is online, you can SSH into the R3S using username/password pi:pi. 
 
