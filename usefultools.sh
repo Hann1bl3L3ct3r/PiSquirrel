@@ -24,3 +24,4 @@ git clone https://github.com/Yaxxine7/ASRepCatcher.git
 git clone https://github.com/dirkjanm/BloodHound.py.git 
 git clone https://github.com/p0dalirius/Coercer.git
 git clone https://github.com/Greenwolf/ntlm_theft.git
+git clone https://github.com/SySS-Research/Seth.git
