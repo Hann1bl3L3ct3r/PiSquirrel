@@ -35,9 +35,9 @@ The useful tools script is some standard tools that are useful for network manip
 The usefultools.sh script will do the following: 
 
  - Makes a dedicated Tools directory
- - Install python3-pip nmap python3-dev tcpdump from apt
+ - Install python3-pip nmap python3-dev tcpdump and more from apt
  - Installs Impacket and Certipy from pip
- - Pulls down Responder, MITM6, ASRepCatcher, and Bloodhound.py from their respective Github repos
+ - Pulls down Responder, MITM6, ASRepCatcher, and more 
 
 Simply run pull and run the script from the home directory: 
 
@@ -87,3 +87,16 @@ pi@HPLASERJET:~/Tools/Responder$ sudo python3 Responder.py -I br0
     DNS                        [ON]
     DHCP                       [OFF]
 ```
+
+UPDATE - PiSquirrel now has a new install script for enhanced stealth within a network. The new script "secret_squirrel.sh" makes the PiSquirrel act like a Brother printer on the network. 
+
+`curl https://raw.githubusercontent.com/Hann1bl3L3ct3r/PiSquirrel/refs/heads/main/secret_squirrel.sh | sudo bash`
+
+The script does the following: 
+ - Installs snmpsim to replicate SNMP data from a printer pulls down snmp data from a real Brother printer to display if scanned, and configures snmpsim to run on startup
+ - Modifies the permissions on the python interpreter to allow it to run on the standard port UDP 161 without needing to be root 
+ - Installs vsftpd and pulls down a configuration file that allows anonymous access to a restricted folder, pulls down and places in that folder a fake CFG-PAGE.TXT file like a normal printer
+ - Pulls down three python scripts that open TCP 513, 631, and 9100 to replicate the open printer ports and configures them to run on startup
+ - Updates crontab for all of the startup processes.
+
+This makes the PiSquirrel respond to all but two ports current, HTTP and HTTPS, which is currently in the works. This assists with the stealth when hidden in a network that does consisten Nessus, OpenVAS, or other vulnerability scans to make the unit less conspicuous. 
