@@ -1,1 +1,1 @@
-@reboot snmpsim-command-responder --data-dir=/home/pi/Tools/FakePrinter/ --agent-udpv4-endpoint=0.0.0.0:161 > /dev/null
+@reboot python /home/pi/.local/bin/snmpsim-command-responder --data-dir=/home/pi/Tools/FakePrinter/ --agent-udpv4-endpoint=0.0.0.0:161 > /dev/null
