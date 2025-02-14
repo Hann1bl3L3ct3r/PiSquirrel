@@ -2,7 +2,7 @@
 ln -s /usr/bin/python3 /usr/bin/python
 
 # Install python, nmap, tcpdump, etc from apt  
-apt install -y python3-pip nmap python3-dev tcpdump pipx bettercap macchanger
+apt install -y python3-pip nmap python3-dev tcpdump pipx bettercap macchanger netcat-traditional
 
 # Install impacket framework, certipy-ad, etc as root
 pip install impacket certipy-ad --break-system-packages
