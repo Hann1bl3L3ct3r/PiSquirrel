@@ -1,0 +1,68 @@
+<<NETWORK CONFIGURATION>>
+
+<Interface>                   WirelessLAN on
+<Node Type>                   Brother NC-8300w, IEEE 802.11b/g/n (Active)
+<Node Firmware Ver.>          Firmware Ver.R  (Oct 16 2019 14:49:41)
+<MAC Address>                 40-5b-d8-ea-9e-28
+<Node name>                   BRW405BD8EA9E28
+
+<Active services>             BRN405BD8EA9E28
+                              BINARY_P1
+                              TEXT_P1
+                              POSTSCRIPT_P1
+                              PCL_P1
+                              BRN405BD8EA9E28_AT
+
+<Protocols>
+ TCP/IP               Enabled               IPv6                 Disabled
+ NetBIOS/IP           Enabled               APIPA                Enabled
+ WebBasedManagement   Enabled               SNMP                 Enabled
+ LPD                  Enabled               Raw Port             Enabled
+ IPP                  Enabled               WebServices          Enabled
+ SMTP                 Enabled               FTP                  Enabled
+ TFTP                 Enabled               mDNS                 Enabled
+ LLMNR                Enabled               Proxy                Disabled
+
+<IP Settings>
+ IP Address                   127.0.0.1    (via DHCP)
+ Subnet Mask                  255.255.255.0
+ IP Gateway                   127.0.0.1
+ Boot Method                  AUTO
+ Boot Tries                   3
+ IP Filter                    Disabled
+
+ GW Timeout (sec)             21
+ DNS Address Config           AUTO
+ Primary DNS Server           8.8.8.8
+ Secondary DNS Server         8.8.4.4
+
+<NetBIOS Name>                BRW405BD8EA9E28
+<WINS Address Config>         AUTO
+<Primary WINS Server>         0.0.0.0
+<Secondary WINS Server>       0.0.0.0
+
+<Send E-mail Settings(SMTP)>
+ Device Mail Address          brn405bd8ea9e28@example.com
+ Server                       0.0.0.0
+ Port                         25
+
+<mDNS Service Name>           Brother HL-L2315D series
+
+<WebServices Name>            Brother HL-L2315D series [405bd8ea9e28]
+
+<SNMP Settings>
+ Communication Mode           v1/v2c(RW)
+
+
+<Comm. Mode>                  Infrastructure
+<Name(SSID)>                  CUSTOMER
+<Authentication Mode>         WPA/WPA2-PSK
+<Encryption Mode>             TKIP+AES
+<Wireless Link Status>        Link OK, 11n(65Mbps), Receiving Signal=3, Operating Ch=11
+<Tx Power Code>               Full, 227, 0, 5
+
+<Network Statistics>                  <Wireless Statistics>
+ Packets Received        7184677       RX Frames Received OK          1322991
+ Bytes Received        999999999       RX Frames Error                  98625
+ Packets Transmitted       59645       TX Frames Transmitted OK        657320
+ Bytes Transmitted      15507827       TX Frames Error                     29
