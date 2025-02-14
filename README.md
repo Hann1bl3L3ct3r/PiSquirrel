@@ -1,6 +1,6 @@
 ![PiSquirrelSmall](https://github.com/user-attachments/assets/e83b6431-64e6-4f7e-ac4f-eb03e133e1d5)
 
-The PiSquirrel was created to fill a similar space to the Hak5 PacketSquirrel. A small, easy to conceal, dropbox that can act as an inline wiretap on servers, workstations, and networking equipment. Using cheap ARM systems and open source tools, the PiSquirrel allows for red teams and offensive security professional to have an easily accessible and low cost option.  Newly added features allow the PiSquirrel to replicate the open ports and responses of a Brother printer, returning proper SNMP data, showing proper FTP files, and show proper open ports (with the exception of two that are still in progress). 
+The PiSquirrel was created to fill a similar space to the Hak5 PacketSquirrel. A small, easy to conceal, dropbox that can act as an inline wiretap on servers, workstations, and networking equipment. Using cheap ARM systems and open source tools, the PiSquirrel allows for red teams and offensive security professional to have an easily accessible and low cost option.  Newly added features allow the PiSquirrel to replicate the open ports and responses of a Brother printer, returning proper SNMP data, showing proper FTP files, and show proper open ports (with the exception of two that are still in progress). This allows for additional stealth on networks with consistent Nessus, OpenVAS, or other network scans monitoring devices on the network. 
 
 PiSquirrel is based on the FriendlyElec NanoPi R3S. The purchase link directly from FriendlyElec is below: 
 
