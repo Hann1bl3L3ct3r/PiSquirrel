@@ -101,3 +101,5 @@ The script does the following:
  - Updates crontab for all of the startup processes.
 
 UPDATE: HTTP has been added with a false Brother printer stype web interface on TCP 8080. This move to 8080 instead of 80 allows for the use of tools such as Responder and Impacket's ntlmrelayx without the need to stop the web server first. 
+
+System Reset: firstboot && reboot
