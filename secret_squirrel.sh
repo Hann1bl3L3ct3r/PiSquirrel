@@ -1,3 +1,4 @@
+#!/bin/bash
 # Fake being a printer for stealth on the network 
 # ONLY RUN THIS POST TOOL SETUP
 
@@ -41,3 +42,4 @@ su pi
 # Setup crontab to automate fake port scripts starting on reboot for pi  
 curl https://raw.githubusercontent.com/Hann1bl3L3ct3r/PiSquirrel/refs/heads/main/FakePrinterFiles/pi_cronjobs > /home/pi/Tools/FakePrinter/pi_cronjobs
 crontab /home/pi/Tools/FakePrinter/pi_cronjobs
+
