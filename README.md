@@ -100,4 +100,4 @@ The script does the following:
  - Pulls down three python scripts that open TCP 513, 631, and 9100 to replicate the open printer ports and configures them to run on startup
  - Updates crontab for all of the startup processes.
 
-This makes the PiSquirrel respond to all but two ports current, HTTP and HTTPS, which is currently in the works. This assists with the stealth when hidden in a network that does consisten Nessus, OpenVAS, or other vulnerability scans to make the unit less conspicuous. 
+UPDATE: HTTP has been added with a false Brother printer stype web interface on TCP 8080. This move to 8080 instead of 80 allows for the use of tools such as Responder and Impacket's ntlmrelayx without the need to stop the web server first. 
