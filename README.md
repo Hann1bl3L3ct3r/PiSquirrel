@@ -18,7 +18,6 @@ You can pull in the setup.sh script to automatically configure the unit for red 
 
  - Updates and upgrades the system
  - Installs bridge-utils to bridge interfaces and nano for easier file editing
- - Modifies the hostname to appear to be a printer to devices on the network
  - Installs ZeroTier for remote access
  - Modifies PATH for future tool installation
  - Modifies the /etc/network/interfaces file to bridge interfaces
@@ -36,7 +35,7 @@ The usefultools.sh script will do the following:
 
  - Makes a dedicated Tools directory
  - Install python3-pip nmap python3-dev tcpdump and more from apt
- - Installs Impacket and Certipy from pip
+ - Installs Impacket, Certipy, Hekatomb, PyRDP-MITM, and more from pip
  - Pulls down Responder, MITM6, ASRepCatcher, and more 
 
 Simply run pull and run the script from the home directory: 
@@ -93,6 +92,7 @@ UPDATE - PiSquirrel now has a new install script for enhanced stealth within a n
 `curl https://raw.githubusercontent.com/Hann1bl3L3ct3r/PiSquirrel/refs/heads/main/secret_squirrel.sh | sudo bash`
 
 The script does the following: 
+ - Modifies the hostname to appear to be a printer to devices on the network
  - Installs snmpsim to replicate SNMP data from a printer pulls down snmp data from a real Brother printer to display if scanned, and configures snmpsim to run on startup
  - Modifies the permissions on the python interpreter to allow it to run on the standard port UDP 161 without needing to be root 
  - Installs vsftpd and pulls down a configuration file that allows anonymous access to a restricted folder, pulls down and places in that folder a fake CFG-PAGE.TXT file like a normal printer
