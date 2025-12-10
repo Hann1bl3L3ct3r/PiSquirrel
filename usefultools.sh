@@ -1,27 +1,49 @@
-# Fix Python references through symlink
-ln -s /usr/bin/python3 /usr/bin/python
+#!/bin/bash
+# Enhanced with error checks and clearer feedback
+set -euo pipefail
 
-# Install python, nmap, tcpdump, etc from apt  
-apt install -y python3-pip nmap python3-dev tcpdump pipx bettercap macchanger netcat-traditional
+die() { echo "[ERROR] $1" >&2; exit 1; }
 
-# Install impacket framework, certipy-ad, etc as root
-pip install impacket certipy-ad --break-system-packages
+# Create Python symlink for backwards compatibility if not exist
+test -e /usr/bin/python || sudo ln -s /usr/bin/python3 /usr/bin/python
 
-# Change users to install as individual user and 
-su pi
+# Install main apt dependencies
+sudo apt update || die "Failed to update packages."
+sudo apt install -y python3-pip nmap python3-dev tcpdump pipx bettercap macchanger netcat-traditional || die "Failed to install core tools."
 
-# Install impacket framework, certipy-ad, etc as pi
-pip install impacket certipy-ad --break-system-packages
+# Install impacket and certipy-ad as root
+sudo -H pip install impacket certipy-ad pyrdp-mitm hekatomb evil-winrm-py --break-system-packages || die "Failed to install impacket/certipy-ad/pyrdp-mitm/hekatomb/hekatomb evil-winrm-py as root."
 
-# Make a dedicated Tools directory
-mkdir Tools
-cd Tools
+# Install as user pi if possible
+if id pi &>/dev/null; then
+    sudo -u pi -H pip install impacket certipy-ad pyrdp-mitm hekatomb hekatomb evil-winrm-py --break-system-packages || die "Failed to install impacket/certipy-ad/pyrdp-mitm/hekatomb/hekatomb evil-winrm-py as pi."
+else
+    echo "[WARN] User 'pi' not found, skipping user-level Python install."
+fi
 
-# Pull down an assortment of tools including Responder, mitm6, ASRepCatcher, and the Bloodhound.py ingester
-git clone https://github.com/lgandx/Responder.git
-git clone https://github.com/dirkjanm/mitm6.git
-git clone https://github.com/Yaxxine7/ASRepCatcher.git
-git clone https://github.com/dirkjanm/BloodHound.py.git 
-git clone https://github.com/p0dalirius/Coercer.git
-git clone https://github.com/Greenwolf/ntlm_theft.git
-git clone https://github.com/SySS-Research/Seth.git
+# Make a dedicated Tools directory as pi if possible
+if id pi &>/dev/null; then
+    sudo -u pi mkdir -p /home/pi/Tools
+    cd /home/pi/Tools || die "Failed to enter Tools directory."
+else
+    mkdir -p Tools
+    cd Tools || die "Failed to enter Tools directory."
+fi
+
+# Clone tool repos (skip on error but report)
+function git_clone_or_skip() {
+    local repo=$1
+    git clone $repo || echo "[WARN] Failed to clone $repo, skipping."
+}
+
+git_clone_or_skip https://github.com/lgandx/Responder.git
+git_clone_or_skip https://github.com/dirkjanm/mitm6.git
+git_clone_or_skip https://github.com/Yaxxine7/ASRepCatcher.git
+git_clone_or_skip https://github.com/dirkjanm/BloodHound.py.git
+git_clone_or_skip https://github.com/p0dalirius/Coercer.git
+git_clone_or_skip https://github.com/Greenwolf/ntlm_theft.git
+git_clone_or_skip https://github.com/SySS-Research/Seth.git
+git_clone_or_skip https://github.com/Hann1bl3L3ct3r/CredBomb.git
+
+echo "[INFO] Useful tools installed. Check the Tools folder for details."
+
