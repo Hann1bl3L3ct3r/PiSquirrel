@@ -93,6 +93,7 @@ UPDATE - PiSquirrel now has a new install script for enhanced stealth within a n
 
 The script does the following: 
  - Modifies the hostname to appear to be a printer to devices on the network
+ - Installs lighttpd, modifies its configuration, and host a fake Brother printer web interface on TCP 8080
  - Installs snmpsim to replicate SNMP data from a printer pulls down snmp data from a real Brother printer to display if scanned, and configures snmpsim to run on startup
  - Modifies the permissions on the python interpreter to allow it to run on the standard port UDP 161 without needing to be root 
  - Installs vsftpd and pulls down a configuration file that allows anonymous access to a restricted folder, pulls down and places in that folder a fake CFG-PAGE.TXT file like a normal printer
