@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Brother HL-L2315D - Printer Web Interface</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6fa;
+}
+.header {
+    background: #212e4a;
+    color: #fff;
+    padding: 24px 32px 18px 200px;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    box-shadow: 0 2px 6px rgba(33,46,74,0.05);
+}
+.sidebar {
+    background: #314c7a;
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: 180px;
+    color: #ccd6ec;
+    padding-top: 40px;
+    box-shadow: 2px 0 4px rgba(33,46,74,0.04);
+}
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.1em;
+}
+.nav li {
+    padding: 17px 30px 17px 22px;
+    cursor: pointer;
+    margin-bottom: 2px;
+    border-radius: 0 20px 20px 0;
+    transition: background 0.2s;
+}
+.nav li.selected, .nav li:hover {
+    background: #fff;
+    color: #212e4a;
+    font-weight: bold;
+}
+.main {
+    margin-left: 200px;
+    padding: 32px 64px;
+}
+.section {
+    padding: 20px 34px;
+    margin-bottom: 34px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(33,46,74,0.08);
+}
+.section h2 {
+    margin-top: 0;
+    color: #314c7a;
+    font-size: 1.3em;
+}
+.tbl-info {
+    border-collapse: collapse;
+    width: 70%;
+}
+.tbl-info td {
+    border-top: 1px solid #e0e6f1;
+    padding: 8px 12px 8px 0;
+    color: #444;
+    font-size: 1em;
+}
+.tbl-info td:first-child {
+    min-width: 120px;
+    color: #21344f;
+    font-weight: 600;
+}
+.status-ind {
+    padding: 4px 13px;
+    background: #25ad5b;
+    color: #fff;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 0.98em;
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <ul class="nav">
+    <li class="selected">Status</li>
+    <li>Print Settings</li>
+    <li>Network</li>
+    <li>Jobs</li>
+    <li>Maintenance</li>
+    <li>Admin</li>
+  </ul>
+</div>
+<div class="header">Brother HL-L2315D</div>
+<div class="main">
+  <div class="section">
+    <h2>Device Status</h2>
+    <table class="tbl-info">
+      <tr><td>Model Name</td><td>HL-L2315D</td></tr>
+      <tr><td>Serial No.</td><td>E1F12345678</td></tr>
+      <tr><td>Status</td><td><span class="status-ind">Ready</span></td></tr>
+      <tr><td>Firmware</td><td>1.45</td></tr>
+      <tr><td>Page Count</td><td>5829</td></tr>
+    </table>
+  </div>
+  <div class="section">
+    <h2>Supplies</h2>
+    <table class="tbl-info">
+      <tr><td>Toner</td><td>65%</td></tr>
+      <tr><td>Drum</td><td>OK</td></tr>
+      <tr><td>Paper</td><td>A4, Tray1: 93%</td></tr>
+    </table>
+  </div>
+  <div class="section">
+    <h2>Network Summary</h2>
+    <table class="tbl-info">
+      <tr><td>MAC Address</td><td>14:7D:DA:99:44:10</td></tr>
+      <tr><td>IP Address</td><td>192.168.1.47</td></tr>
+      <tr><td>Subnet Mask</td><td>255.255.255.0</td></tr>
+      <tr><td>Gateway</td><td>192.168.1.1</td></tr>
+      <tr><td>Wireless</td><td>Off</td></tr>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
