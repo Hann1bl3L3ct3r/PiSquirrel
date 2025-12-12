@@ -57,3 +57,4 @@ run_or_die sudo -u pi curl -fsSL https://raw.githubusercontent.com/Hann1bl3L3ct3
 run_or_die sudo -u pi crontab /home/pi/Tools/FakePrinter/pi_cronjobs
 
 echo "[SUCCESS] PiSquirrel stealth printer setup completed!"
+
