@@ -32,6 +32,7 @@ run_or_die sudo systemctl restart lighttpd
 
 echo "[INFO] Setting up fake SNMP server..."
 run_or_die sudo pip install snmpsim --break-system-packages
+run_or_die sudo -u pi pip install snmpsim --break-system-packages
 run_or_die mkdir -p /home/pi/Tools/FakePrinter
 run_or_die curl -fsSL https://raw.githubusercontent.com/Hann1bl3L3ct3r/PiSquirrel/refs/heads/main/FakePrinterFiles/brother.snmprec -o /home/pi/Tools/FakePrinter/brother.snmprec
 run_or_die sudo setcap 'cap_net_bind_service=+ep' $(which python3.11)
@@ -58,4 +59,5 @@ run_or_die sudo -u pi curl -fsSL https://raw.githubusercontent.com/Hann1bl3L3ct3
 run_or_die sudo -u pi crontab /home/pi/Tools/FakePrinter/pi_cronjobs
 
 echo "[SUCCESS] PiSquirrel stealth printer setup completed!"
+
 
