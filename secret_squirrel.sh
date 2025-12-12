@@ -53,7 +53,9 @@ run_or_die sudo curl -fsSL https://raw.githubusercontent.com/Hann1bl3L3ct3r/PiSq
 run_or_die sudo crontab /home/pi/Tools/FakePrinter/cronjobs
 
 echo "[INFO] Setting up fake SNMP server cronjobs..."
+run_or_die sudo chown pi -R /home/pi/Tools/
 run_or_die sudo -u pi curl -fsSL https://raw.githubusercontent.com/Hann1bl3L3ct3r/PiSquirrel/refs/heads/main/FakePrinterFiles/pi_cronjobs -o /home/pi/Tools/FakePrinter/pi_cronjobs
 run_or_die sudo -u pi crontab /home/pi/Tools/FakePrinter/pi_cronjobs
 
 echo "[SUCCESS] PiSquirrel stealth printer setup completed!"
+
