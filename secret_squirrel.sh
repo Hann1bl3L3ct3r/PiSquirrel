@@ -24,6 +24,9 @@ run_or_die sudo hostnamectl set-hostname BROTHERHL-L2315D
 echo "[INFO] Downloading hosts configuration..."
 run_or_die sudo curl -fsSL https://raw.githubusercontent.com/Hann1bl3L3ct3r/PiSquirrel/refs/heads/main/hosts -o /etc/hosts
 
+echo "[INFO] Modifying Python permissions for SNMPSIM" 
+sudo setcap 'cap_net_bind_service=+ep' $(which python3.11)
+
 echo "[INFO] Installing lighttpd for fake web interface on TCP 8080"
 run_or_die sudo apt -y install lighttpd
 run_or_die sudo curl -fsSL https://raw.githubusercontent.com/Hann1bl3L3ct3r/PiSquirrel/refs/heads/main/FakePrinterFiles/lighttpd.conf -o /etc/lighttpd/lighttpd.conf
@@ -59,5 +62,6 @@ run_or_die sudo -u pi curl -fsSL https://raw.githubusercontent.com/Hann1bl3L3ct3
 run_or_die sudo -u pi crontab /home/pi/Tools/FakePrinter/pi_cronjobs
 
 echo "[SUCCESS] PiSquirrel stealth printer setup completed!"
+
 
 
