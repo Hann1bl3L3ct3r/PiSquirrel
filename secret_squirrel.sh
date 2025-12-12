@@ -1,10 +1,8 @@
 #!/bin/bash
 # Fake being a printer for stealth on the network 
 # ONLY RUN THIS POST TOOL SETUP
-
 set -e  # Exit immediately on errors
 set -u  # Treat unset variables as errors
-
 die() {
     echo "[ERROR] $1" >&2
     exit 1
@@ -57,4 +55,5 @@ run_or_die sudo -u pi curl -fsSL https://raw.githubusercontent.com/Hann1bl3L3ct3
 run_or_die sudo -u pi crontab /home/pi/Tools/FakePrinter/pi_cronjobs
 
 echo "[SUCCESS] PiSquirrel stealth printer setup completed!"
+
 
