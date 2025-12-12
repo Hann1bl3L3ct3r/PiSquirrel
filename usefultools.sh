@@ -9,7 +9,7 @@ test -e /usr/bin/python || sudo ln -s /usr/bin/python3 /usr/bin/python
 
 # Install main apt dependencies
 sudo apt update || die "Failed to update packages."
-echo "macchanger macchanger/automatically_run boolean false" | sudo debconf-set-selections
+echo "macchanger macchanger/automatically_run boolean true" | sudo debconf-set-selections
 echo "macchanger macchanger/restore_original_on_dhcp boolean true" | sudo debconf-set-selections
 sleep 2
 sudo DEBIAN_FRONTEND=noninteractive apt install -y python3-pip nmap python3-dev tcpdump pipx bettercap macchanger netcat-traditional || die "Failed to install core tools."
