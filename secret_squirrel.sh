@@ -63,8 +63,10 @@ run_or_die sudo -u pi crontab /home/pi/Tools/FakePrinter/pi_cronjobs
 
 echo "[INFO] Fixing some items that have been seen during setup"
 sudo sed -i 's/\r$//' /etc/vsftpd.conf
+sudo systemctl restart vsftpd
 
 echo "[SUCCESS] PiSquirrel stealth printer setup completed!"
+
 
 
 
