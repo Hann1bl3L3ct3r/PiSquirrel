@@ -89,7 +89,7 @@ pi@HPLASERJET:~/Tools/Responder$ sudo python3 Responder.py -I br0
 
 UPDATE - PiSquirrel now has a new install script for enhanced stealth within a network. The new script "secret_squirrel.sh" makes the PiSquirrel act like a Brother printer on the network. 
 
-`curl https://raw.githubusercontent.com/Hann1bl3L3ct3r/PiSquirrel/refs/heads/main/secret_squirrel.sh | sudo bash`
+`curl https://raw.githubusercontent.com/Hann1bl3L3ct3r/PiSquirrel/refs/heads/main/secret_squirrel.sh | sed 's/\r$//' | sudo bash`
 
 The script does the following: 
  - Modifies the hostname to appear to be a printer to devices on the network
