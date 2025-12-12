@@ -9,8 +9,8 @@ test -e /usr/bin/python || sudo ln -s /usr/bin/python3 /usr/bin/python
 
 # Install main apt dependencies
 sudo apt update || die "Failed to update packages."
-sudo apt install -y python3-pip nmap python3-dev tcpdump pipx bettercap macchanger netcat-traditional || die "Failed to install core tools."
-
+echo "macchanger   macchanger/automatically_run boolean false" | sudo debconf-set-selections
+sudo DEBIAN_FRONTEND=noninteractive apt install -y python3-pip nmap python3-dev tcpdump pipx bettercap macchanger netcat-traditional || die "Failed to install core tools."
 # Install impacket and certipy-ad as root
 sudo -H pip install impacket certipy-ad pyrdp-mitm hekatomb evil-winrm-py --break-system-packages || die "Failed to install impacket/certipy-ad/pyrdp-mitm/hekatomb/hekatomb evil-winrm-py as root."
 
