@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Brother HL-L2315D - Printer Web Interface</title>
-<style>
-body {
+  <meta charset="UTF-8">
+  <title>Brother HL-L2315D - Printer Web Interface</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css"><!-- fallback if separated -->
+  <style>
+  body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: #f5f6fa;
-}
-.header {
+  }
+  .header {
     background: #212e4a;
     color: #fff;
     padding: 24px 32px 18px 200px;
@@ -17,8 +20,8 @@ body {
     font-weight: bold;
     letter-spacing: 2px;
     box-shadow: 0 2px 6px rgba(33,46,74,0.05);
-}
-.sidebar {
+  }
+  .sidebar {
     background: #314c7a;
     position: fixed;
     left: 0; top: 0; bottom: 0;
@@ -26,97 +29,144 @@ body {
     color: #ccd6ec;
     padding-top: 40px;
     box-shadow: 2px 0 4px rgba(33,46,74,0.04);
-}
-.nav {
+  }
+  .nav {
     list-style: none;
     padding: 0;
     margin: 0;
     font-size: 1.1em;
-}
-.nav li {
+  }
+  .nav li {
     padding: 17px 30px 17px 22px;
     cursor: pointer;
     margin-bottom: 2px;
     border-radius: 0 20px 20px 0;
     transition: background 0.2s;
-}
-.nav li.selected, .nav li:hover {
+  }
+  .nav li.selected, .nav li:hover {
     background: #fff;
     color: #212e4a;
     font-weight: bold;
-}
-.main {
+  }
+  .nav a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .nav li.disabled, .nav li.disabled a {
+    color: #a3afc5;
+    cursor: not-allowed;
+    font-style: italic;
+  }
+  .main {
     margin-left: 200px;
     padding: 32px 64px;
-}
-.section {
+  }
+  .section {
     padding: 20px 34px;
     margin-bottom: 34px;
     background: #fff;
     border-radius: 16px;
     box-shadow: 0 2px 12px rgba(33,46,74,0.08);
-}
-.section h2 {
+  }
+  .section h2 {
     margin-top: 0;
     color: #314c7a;
     font-size: 1.3em;
-}
-.tbl-info {
+  }
+  .tbl-info {
     border-collapse: collapse;
     width: 70%;
-}
-.tbl-info td {
+  }
+  .tbl-info td {
     border-top: 1px solid #e0e6f1;
     padding: 8px 12px 8px 0;
     color: #444;
     font-size: 1em;
-}
-.tbl-info td:first-child {
+  }
+  .tbl-info td:first-child {
     min-width: 120px;
     color: #21344f;
     font-weight: 600;
-}
-.status-ind {
+  }
+  .status-ind {
     padding: 4px 13px;
     background: #25ad5b;
     color: #fff;
     border-radius: 15px;
     font-weight: 600;
     font-size: 0.98em;
-}
-</style>
+  }
+  select, input[type="checkbox"] {
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+  .footer {
+    text-align: center;
+    color: #818ba3;
+    font-size: 0.85em;
+    padding: 23px 0 8px 0;
+    letter-spacing: 0.5px;
+  }
+  </style>
+  <script src="js/scripts.js"></script>
+  <script>
+    // Simulate legacy analytics or vendor log
+    window.addEventListener('DOMContentLoaded', function() {
+      try {
+        console.log("Brother Web MFP UI ©2013-2019 Brother Industries, Ltd.");
+      } catch(e){}
+    });
+  </script>
 </head>
 <body>
-
-<div class="sidebar">
+<nav class="sidebar" aria-label="Main navigation">
   <ul class="nav">
-    <li class="selected">Status</li>
-    <li>Print Settings</li>
-    <li>Network</li>
-    <li>Jobs</li>
-    <li>Maintenance</li>
-    <li>Admin</li>
+    <li class="selected"><a href="#">Status</a></li>
+    <li><a href="#">Print Settings</a></li>
+    <li><a href="#">Network</a></li>
+    <li><a href="#">Jobs</a></li>
+    <li class="disabled"><a href="#">Maintenance</a></li>
+    <li><a href="#">Admin</a></li>
   </ul>
-</div>
-<div class="header">Brother HL-L2315D</div>
-<div class="main">
+</nav>
+<header class="header" role="banner">Brother HL-L2315D</header>
+<main class="main">
   <div class="section">
     <h2>Device Status</h2>
     <table class="tbl-info">
       <tr><td>Model Name</td><td>HL-L2315D</td></tr>
       <tr><td>Serial No.</td><td>E1F12345678</td></tr>
       <tr><td>Status</td><td><span class="status-ind">Ready</span></td></tr>
-      <tr><td>Firmware</td><td>1.45</td></tr>
-      <tr><td>Page Count</td><td>5829</td></tr>
+      <tr><td>Firmware</td><td>1.45 (2022/09/16)</td></tr>
+      <tr><td>Page Count</td><td>5,829 pages</td></tr>
     </table>
+    <div style="margin-top:10px; font-size:0.91em; color:#7e8ea9">
+      Last update: 2024/06/10 11:58:34
+    </div>
   </div>
   <div class="section">
     <h2>Supplies</h2>
     <table class="tbl-info">
-      <tr><td>Toner</td><td>65%</td></tr>
+      <tr><td>Toner</td><td>
+        <div style="display:inline-block;width:80px;height:16px;background:#e0e6f1;border-radius:7px;position:relative;">
+          <span style="display:block;position:absolute;height:100%;background:#25ad5b;width:65%;border-radius:7px;"></span>
+        </div>
+        <span style="margin-left:12px;">65%</span>
+      </td></tr>
       <tr><td>Drum</td><td>OK</td></tr>
-      <tr><td>Paper</td><td>A4, Tray1: 93%</td></tr>
+      <tr><td>Paper</td><td>
+        <select disabled>
+          <option>A4</option>
+          <option>Letter</option>
+        </select>, Tray1: 93% full
+      </td></tr>
     </table>
+    <div style="color:#f47b20; font-size:0.96em; margin-top:7px;">
+      * Drums should be replaced every 12,000 pages for best quality.
+    </div>
   </div>
   <div class="section">
     <h2>Network Summary</h2>
@@ -125,10 +175,14 @@ body {
       <tr><td>IP Address</td><td>192.168.1.47</td></tr>
       <tr><td>Subnet Mask</td><td>255.255.255.0</td></tr>
       <tr><td>Gateway</td><td>192.168.1.1</td></tr>
-      <tr><td>Wireless</td><td>Off</td></tr>
+      <tr><td>Wireless</td><td><input type="checkbox" disabled> <span style="color:#c00">Off</span></td></tr>
     </table>
+    <div style="color:#7e8ea9;font-size:0.92em;margin-top:11px">For detailed wireless settings, go to Network &gt; Wireless Setup Wizard.</div>
   </div>
+</main>
+<div class="footer">
+  ©2013-2024 Brother Industries, Ltd. All Rights Reserved.<br>
+  <span style="color:#b9c2cf">v2.12.08</span>
 </div>
-
 </body>
 </html>
